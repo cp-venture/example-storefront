@@ -12,7 +12,7 @@ networks:
       name: reaction.localhost
 
 services:
-  web:
+  artifacts-web:
     image: reactioncommerce/example-storefront:3.0.0
     env_file:
       - ./.env
@@ -21,3 +21,12 @@ services:
       reaction:
     ports:
       - 4000:4000
+  templates-web:
+    image: reactioncommerce/example-storefront:3.0.0
+    env_file:
+      - ./.env
+    networks:
+      default:
+      reaction:
+    ports:
+      - 4001:4000
