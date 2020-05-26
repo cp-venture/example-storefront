@@ -14,17 +14,16 @@ networks:
 services:
   artifacts-web:
     image: reactioncommerce/example-storefront:3.0.0
-    env_file:
-      - ./.env
+    env_file: "./.denv/artifacts.env"
     networks:
       default:
       reaction:
     ports:
       - 4000:4000
+
   templates-web:
     image: reactioncommerce/example-storefront:3.0.0
-    env_file:
-      - ./.env
+    env_file: "./.denv/templates.env"
     networks:
       default:
       reaction:
